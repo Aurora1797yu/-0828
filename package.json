@@ -1,0 +1,12 @@
+{
+  "name": "lychee_calendar",
+  "version": "1.0.0",
+  "description": "参考复旦大学\"文化校历\"理念，为深圳大学打造的校园文化 H5，深度融合深大独有的荔园文化基因。 本版在初版基础上完成视觉 redesign，并新增**「社团推荐」**子专栏。",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
