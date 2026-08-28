@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>荔园文化月历 · 深圳大学</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- 顶部状态栏 -->
+  <div class="status-bar">
+    <span class="status-time">9:41</span>
+    <span class="status-icons">●●● &#128246; &#128267;</span>
+  </div>
+
+  <!-- 顶栏 -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">荔</span>
+        <div class="brand-text">
+          <span class="brand-title">荔园文化月历</span>
+          <span class="brand-sub">深圳大学 · 荔园文化日历</span>
+        </div>
+      </div>
+      <button class="icon-btn" id="searchBtn" aria-label="搜索">&#128269;</button>
+    </div>
+    <nav class="tab-nav" id="tabNav">
+      <button class="tab active" data-tab="calendar">月历</button>
+      <button class="tab" data-tab="discover">发现</button>
+      <button class="tab" data-tab="welfare">福利</button>
+      <button class="tab" data-tab="clubs">社团</button>
+      <button class="tab" data-tab="mine">我的</button>
+    </nav>
+  </header>
+
+  <main class="page-container">
+
+    <!-- ========== 月历页 ========== -->
+    <section class="page" id="page-calendar">
+      <div class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-body">
+          <p class="hero-eyebrow">Shenzhen University · CULTURAL CALENDAR</p>
+          <h1 class="hero-title">把荔园的日子<br>过成一首诗</h1>
+          <p class="hero-desc">一校两区 · 全年文化活动一览 · 一键报名</p>
+          <div class="hero-meta">
+            <span class="hero-meta-item"><i class="dot"></i>粤海 / 丽湖</span>
+            <span class="hero-meta-item"><i class="dot"></i>2026—2027 学年</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="month-switch">
+          <button class="round-btn" id="prevMonth" aria-label="上月">&#10094;</button>
+          <span class="month-label" id="monthLabel"></span>
+          <button class="round-btn" id="nextMonth" aria-label="下月">&#10095;</button>
+        </div>
+        <div class="chip-group" id="chipGroup">
+          <button class="chip active" data-cat="all">全部</button>
+          <button class="chip" data-cat="brand">品牌</button>
+          <button class="chip" data-cat="academic">学术</button>
+          <button class="chip" data-cat="art">文艺</button>
+          <button class="chip" data-cat="sport">体育</button>
+          <button class="chip" data-cat="labor">劳动</button>
+        </div>
+      </div>
+
+      <div class="section-head">
+        <h2 class="section-title">本月活动</h2>
+        <span class="section-count" id="eventCount"></span>
+      </div>
+      <div class="event-list" id="eventList"></div>
+    </section>
+
+    <!-- ========== 发现页 ========== -->
+    <section class="page hidden" id="page-discover">
+      <div class="page-head">
+        <h1 class="page-title">荔园发现</h1>
+        <p class="page-sub">那些在荔园"非做不可"的事</p>
+      </div>
+      <div class="discover-grid" id="discoverGrid"></div>
+    </section>
+
+    <!-- ========== 福利专区（新增） ========== -->
+    <section class="page hidden" id="page-welfare">
+      <div class="page-head">
+        <h1 class="page-title">福利专区</h1>
+        <p class="page-sub">第一现场客户端 × 荔园文化月历 · 观影 / 演出 / 赛事福利派发</p>
+      </div>
+      <div class="wel-banner">
+        <div class="wel-banner-bg" aria-hidden="true"></div>
+        <div class="wel-banner-body">
+          <span class="wel-banner-tag">WELFARE</span>
+          <p class="wel-banner-title">把荔园的惊喜<br>一键领回家</p>
+          <p class="wel-banner-desc">观影券 · 演唱会门票 · 赛事名额 · 文创盲盒，不定期派发</p>
+        </div>
+      </div>
+      <div class="club-cat-bar" id="welCatBar">
+        <button class="wel-cat active" data-cat="all">全部</button>
+        <button class="wel-cat" data-cat="movie">观影</button>
+        <button class="wel-cat" data-cat="concert">演出</button>
+        <button class="wel-cat" data-cat="ticket">门票</button>
+        <button class="wel-cat" data-cat="life">生活</button>
+      </div>
+      <div class="section-head">
+        <h2 class="section-title">进行中福利</h2>
+        <span class="section-count" id="welCountHead"></span>
+      </div>
+      <div class="event-list" id="welList"></div>
+    </section>
+
+    <!-- ========== 社团页（新增） ========== -->
+    <section class="page hidden" id="page-clubs">
+      <div class="page-head">
+        <h1 class="page-title">社团推荐</h1>
+        <p class="page-sub">百团争鸣，找到你的荔园同好</p>
+      </div>
+      <div class="club-cat-bar" id="clubCatBar">
+        <button class="club-cat active" data-cat="all">全部</button>
+        <button class="club-cat" data-cat="art">文艺</button>
+        <button class="club-cat" data-cat="sport">体育</button>
+        <button class="club-cat" data-cat="academic">学术</button>
+        <button class="club-cat" data-cat="service">公益</button>
+        <button class="club-cat" data-cat="hobby">兴趣</button>
+      </div>
+      <div class="club-list" id="clubList"></div>
+    </section>
+
+    <!-- ========== 我的页 ========== -->
+    <section class="page hidden" id="page-mine">
+      <div class="page-head">
+        <h1 class="page-title">我的报名</h1>
+        <p class="page-sub">你收藏的荔园时刻</p>
+      </div>
+      <div class="mine-empty" id="mineEmpty">
+        <div class="empty-illu" aria-hidden="true">&#127826;</div>
+        <p>还没有报名活动<br>去月历挑一个心动的吧</p>
+      </div>
+      <div class="event-list" id="mineList"></div>
+      <div class="section-head" style="margin-top:18px;">
+        <h2 class="section-title">我的福利</h2>
+        <span class="section-count" id="welCount"></span>
+      </div>
+      <div class="event-list" id="mineWelList"></div>
+    </section>
+
+  </main>
+
+  <!-- 底部标签栏 -->
+  <nav class="bottombar">
+    <button class="bb-item active" data-tab="calendar"><span class="bb-ico">&#128197;</span><span>月历</span></button>
+    <button class="bb-item" data-tab="discover"><span class="bb-ico">&#128150;</span><span>发现</span></button>
+    <button class="bb-item" data-tab="welfare"><span class="bb-ico">&#127873;</span><span>福利</span></button>
+    <button class="bb-item" data-tab="clubs"><span class="bb-ico">&#127942;</span><span>社团</span></button>
+    <button class="bb-item" data-tab="mine"><span class="bb-ico">&#128100;</span><span>我的</span></button>
+  </nav>
+
+  <!-- 活动详情弹层 -->
+  <div class="sheet-mask hidden" id="sheetMask"></div>
+  <div class="sheet hidden" id="sheet">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <div class="sheet-body" id="sheetBody"></div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast hidden" id="toast"></div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
